@@ -71,8 +71,8 @@
             <span class="author-block">University of Washington</span>
           </div>
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
+          <!-- <div class="column has-text-centered">
+            <div class="publication-links"> -->
               <!-- PDF Link. -->
               <!-- <span class="link-block">
                 <a href=""
@@ -92,7 +92,7 @@
                   <span>arXiv</span>
                 </a>
               </span> -->
-          </div>
+          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -100,23 +100,31 @@
 </section>
 
 
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-three-fifths">
+  <div class="content has-text-justified">
+    <p>
+      <b>TL;DR:</b>&nbsp;We present a model predictive control system for high-speed off-road autonomy to prevent failiure over steep slopes and ditches.
+    </p>
+  </div>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source width="50%"
+        <source width="80%"
           src="./static/videos/BLURRED_vditch_rev_sideview.mp4"
           type="video/mp4">
     </div>
   </div>
+  </div>
+</div>
+
 </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
-    <p>
-      <b>TL;DR</b> We present a physics-based framework and Model Predictive Control for high-speed off-road autonomy, effectively mitigating rollover and ditch-crossing failures, as demonstrated through real-world experimentation benchmarked against a human expert.
-    </p>
     <br>
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -124,11 +132,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Terrain traversability in off-road autonomy has traditionally relied on semantic classification, resource-intensive dynamics models, or purely geometry-based methods to predict vehicle-terrain interactions. However, our experiences in the development of a high-speed off-road platform have revealed several critical challenges that are not adequately addressed by current methods at our operating speeds of 7&mdash;10 m/s. This study focuses particularly on uneven terrain such as hills, banks, and ditches. These common high-risk geometries are capable of disabling the vehicle and causing severe passenger injuries if poorly traversed.
-            We introduce a physics-based framework for identifying traversability constraints on terrain dynamics. Using this framework, we then derive two fundamental constraints, each with a focus on mitigating rollover and ditch-crossing failures while being fully parallelizable in the sampled-based Model Predictive Control (MPC) framework. In addition, we present the design of our planning and control system, which implements our parallelized constraints in MPC and utilizes a low-level controller to meet the demands of our aggressive driving in a problem setting in which we have no prior information about the environment and its dynamics.
+            Terrain traversability in off-road autonomy has traditionally relied on semantic classification, resource-intensive dynamics models, or purely geometry-based methods to predict vehicle-terrain interactions. However, our experiences in the development of a high-speed off-road platform have revealed several critical challenges that are not adequately addressed by current methods at our operating speeds of 7&mdash;10 m/s. This study focuses particularly on uneven terrain such as hills, banks, and ditches. <b>These common high-risk geometries are capable of disabling the vehicle and causing severe passenger injuries if poorly traversed.</b>
+          </p>
+          <p>
+            <b>We introduce a physics-based framework for identifying traversability constraints on terrain dynamics.</b> Using this framework, we then derive two fundamental constraints, each with a focus on mitigating rollover and ditch-crossing failures while being fully parallelizable in the sampled-based Model Predictive Control (MPC) framework. In addition, we present the design of our planning and control system, which implements our parallelized constraints in MPC and utilizes a low-level controller to meet the demands of our aggressive driving in a problem setting in which we have <b>no prior information about the environment and its dynamics.</b>
+          </p>
+          <p>
             Through real-world experimentation and traversal of hills and ditches,
             we benchmark our method against a human expert to demonstrate that our approach captures fundamental elements of safe and aggressive autonomy over uneven terrain.
-            Our approach also improves upon purely geometry-based methods by traversing up to %22 faster while maintaing safe operation.
+            <b>Our approach also improves upon purely geometry-based methods by traversing up to %22 faster while maintaing safe operation.</b>
           </p>
         </div>
       </div>
@@ -140,41 +152,34 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
+    <div class="has-text-centered">
+      <h2 class="title is-3">Rollover Testing</h2>
+    </div>
+    <br>
+    <br>
     <div class="columns is-centered">
 
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-4">Expert Driver</h2>
           <p>
             Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
             would be impossible without nerfies since it would require going through a wall.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+          <image src="./static/videos/10deg-circles-eliot_smaller.gif">
         </div>
       </div>
       <!--/ Visual Effects. -->
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
+        <h2 class="title is-4">Ours</h2>
+        <p>
+          Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+          would be impossible without nerfies since it would require going through a wall.
+        </p>
+        <image src="./static/videos/10deg-circles-b2-rr3p4_smaller.gif">
       </div>
     </div>
     <!--/ Matting. -->
